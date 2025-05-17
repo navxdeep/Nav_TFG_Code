@@ -124,6 +124,7 @@ def simulate_single_subject(exec_env, g):
         # Some models like Hopf do not require explicit computation of BOLD signal
         # BUT, we still have to convert the signal into samples of size tr
         tr = exec_env['tr']
+        sampling_period = exec_env['sampling_period']
         n = int(tr / sampling_period)
         len = signal.shape[0]
         tmp1 = np.pad(signal, ((0, n - len % n), (0, 0)),
@@ -132,6 +133,7 @@ def simulate_single_subject(exec_env, g):
         tmp2 = tmp1.reshape(n, int(tmp1.shape[0]/n), -1)
         bds = np.nanmean(tmp2, axis=0)
     return bds
+
 
 
 def process_bold_signals(bold_signals, exec_env):
