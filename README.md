@@ -21,7 +21,7 @@ The package is not in the pip repository, but temporarily you can install it wit
 `pip install -e "git+https://github.com/neich/neuronumba.git#egg=neuronumba&subdirectory=src"`
 
 # Project Configuration 
-
-To reproduce the results, one must configure the WorkBrainFolder.py file under the Dataloader folder  to point to the local path where the ADNI data is stored. Once this path is correctly set, all data loaders (e.g., ADNI_A_Reparcellated.py) will find the necessary files and the scripts will run as intended. 
+This repository contains the code and instructions needed to reproduce the whole‐brain modeling analyses using the Neuronumba library on the ADNI dataset. Before running any simulation or analysis, you must obtain and preprocess the ADNI data, then place it in the correct folder so that Neuronumba can find it.
+Specifically, to reproduce the results, one must configure the WorkBrainFolder.py file under the Dataloader folder  to point to the local path where the ADNI data is stored. Once this path is correctly set, all data loaders (e.g., ADNI_A_Reparcellated.py) will find the necessary files and the scripts will run as intended. 
 
 
