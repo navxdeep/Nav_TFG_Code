@@ -21,7 +21,7 @@ The package is not in the pip repository, but temporarily you can install it wit
 `pip install -e "git+https://github.com/neich/neuronumba.git#egg=neuronumba&subdirectory=src"`
 
 # Project Configuration 
-This repository contains the code and instructions needed to reproduce the whole‐brain modeling analyses using the Neuronumba library on the ADNI dataset. Before running any simulation or analysis, you must obtain and preprocess the ADNI data, then place it in the correct folder so that Neuronumba can find it.
-Specifically, to reproduce the results, one must configure the WorkBrainFolder.py file under the Dataloader folder  to point to the local path where the ADNI data is stored. Once this path is correctly set, all data loaders (e.g., ADNI_A_Reparcellated.py) will find the necessary files and the scripts will run as intended. 
+This repository contains the code and instructions needed to reproduce the whole‐brain modeling analyses using the Neuronumba library on the ADNI dataset. Before running any simulation or analysis, you must obtain and preprocess the ADNI data—specifically, you must parcellate each subject’s raw MRI (T1w, DTI, rs-fMRI) into a standard atlas (e.g., in our case we made use of the Schaefer-100) so that you end up with regional SC, and  BOLD timeseries files for each individual. Once you have placed those parcellated outputs under a directory named `ADNI_A_Reparcellated/`, open `Dataloader/WorkBrainFolder.py` and set `ADNI_DATA_DIR` to point to that folder. As soon as that path is configured, all data loaders (e.g., `ADNI_A_Reparcellated.py`) will locate the necessary files and the modeling scripts will run as intended. The three scripts one must run (one per modeling pipeline) are: main_hopf.py (for the Full Hopf Model), main_DMF.py (For the nonlinear DMF model) and linearhopf_code.py ( for the linear Hopf's Approximation). 
+
 
 
